@@ -1,0 +1,100 @@
+
+//以下加密密码
+if(!pm.globals.has("forgeJS")){
+        pm.sendRequest("https://raw.githubusercontent.com/weijinsun/code/master/forge.js", function (err, res) {
+        if (err) {
+            console.log(err);}
+        else {
+            pm.globals.set("forgeJS", res.text());}
+})}
+
+eval(pm.globals.get("forgeJS"));
+
+const public_key = '-----BEGIN PUBLIC KEY-----\n'+
+"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCa2tT" +
+            "+DYw08YUhx13ejYWjTClFWtf1V4ptFsLqSA0AMAa0ffMpnrEJknPxKP3EFBZHnYHcr/8+thIcOMfapQLpaQ5cHj2cV0/3y3t/CTiQDkoWUoDXbtby9IVD/c/+LoqXg6sr0d0AwAZHzNKSflTR2JVi62MxKR67dFPOij895QIDAQAB\n"+
+'-----END PUBLIC KEY-----'
+
+
+var publicKey = forge.pki.publicKeyFromPem(public_key);
+
+var myDate = new Date();
+myDate.setSeconds(0);
+myDate.setMilliseconds(0);
+var time=myDate.getTime();
+
+var password='362666';
+password+=time;
+
+var buffer = forge.util.createBuffer(password, 'utf8');
+var bytes = buffer.getBytes();
+
+// compatible with Java's RSA/ECB/OAEPWithSHA-256AndMGF1Padding
+var encrypted = publicKey.encrypt(bytes, 'RSAES-PKCS1-V1_5', {
+  md: forge.md.sha256.create(),
+  mgf1: {
+    md: forge.md.sha1.create()
+  }
+});
+
+password = forge.util.encode64(encrypted,"utf-8");
+
+pm.environment.set("password", password);
+
+
+//以下参数签名
+
+var seed="oCqnJ88ujF5vB6OCkQxAKN"+time;
+
+var key = CryptoJS.MD5(seed);
+key = CryptoJS.enc.Hex.stringify(key);
+
+
+let param = request.data;   //post 参数
+
+let queryParam = pm.request.url.query.members;  //get中的参数
+
+//将post和get合并，并且移除sign参数
+for (let i in queryParam) {
+    param[queryParam[i].key] = queryParam[i].value;
+}
+
+//排序
+param = objSort(param);
+
+var hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, key); 
+hmac.update(param); 
+var hash = hmac.finalize();
+var sign = CryptoJS.enc.Base64.stringify(hash)
+
+pm.environment.set("sign", sign);
+
+//排序方法
+function objSort(obj)
+{
+    let keys = Object.keys(obj).sort();
+    var str=keys.length;
+    var arr=new Array();
+
+    for (let i in keys) {
+        let key=keys[i];
+        let value=obj[key];
+        if(!isEmpty(key)&&key != "sign"){
+            arr.push(key);
+            if(value=="{{"+key+"}}"){
+                arr.push(pm.environment.get(key));
+            }else{
+                arr.push(value);
+            }
+        }
+    }
+    return arr.join(":");
+}
+
+function isEmpty(obj){
+    if(typeof obj == "undefined" || obj == null || obj == ""){
+        return true;
+    }else{
+        return false;
+    }
+}
