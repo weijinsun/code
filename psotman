@@ -11,8 +11,7 @@ if(!pm.globals.has("forgeJS")){
 eval(pm.globals.get("forgeJS"));
 
 const public_key = '-----BEGIN PUBLIC KEY-----\n'+
-"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCa2tT" +
-            "+DYw08YUhx13ejYWjTClFWtf1V4ptFsLqSA0AMAa0ffMpnrEJknPxKP3EFBZHnYHcr/8+thIcOMfapQLpaQ5cHj2cV0/3y3t/CTiQDkoWUoDXbtby9IVD/c/+LoqXg6sr0d0AwAZHzNKSflTR2JVi62MxKR67dFPOij895QIDAQAB\n"+
+"MIGIDAQAB\n"+
 '-----END PUBLIC KEY-----'
 
 
@@ -23,7 +22,7 @@ myDate.setSeconds(0);
 myDate.setMilliseconds(0);
 var time=myDate.getTime();
 
-var password='362666';
+var password='333222';
 password+=time;
 
 var buffer = forge.util.createBuffer(password, 'utf8');
@@ -44,7 +43,7 @@ pm.environment.set("password", password);
 
 //以下参数签名
 
-var seed="oCqnJ88ujF5vB6OCkQxAKN"+time;
+var seed="oCqnxxxxxxxxxxxxxxxxxxxxxxN"+time;
 
 var key = CryptoJS.MD5(seed);
 key = CryptoJS.enc.Hex.stringify(key);
