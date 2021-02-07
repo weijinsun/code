@@ -146,6 +146,8 @@ rules:
   - DOMAIN-SUFFIX,gozap.com,DIRECT
   - DOMAIN-SUFFIX,traefik.io,Proxy
   - DOMAIN-SUFFIX,kubernetes.io,Proxy
+  - DOMAIN-SUFFIX,github.com,Proxy
+  - DOMAIN-SUFFIX,githubcontent.com,Proxy
 
 
 
