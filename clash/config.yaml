@@ -147,7 +147,7 @@ rules:
   - DOMAIN-SUFFIX,traefik.io,Proxy
   - DOMAIN-SUFFIX,kubernetes.io,Proxy
   - DOMAIN-SUFFIX,github.com,Proxy
-  - DOMAIN-SUFFIX,githubcontent.com,Proxy
+  - DOMAIN-SUFFIX,githubusercontent.com,Proxy
 
 
 
