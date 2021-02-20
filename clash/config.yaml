@@ -28,6 +28,7 @@ proxy-providers:
   # npss-trojan-p:
   #   type: file
   #   path: ./node/npss-trojan.yaml
+  #   url: https://sub.6201170.xyz/sub?target=clash&url=https%3A%2F%2Fsubscribe.nerwo.co%2Fsub%2FOEkZR8JljhRsH9fR.html%3Ftype%3Dtrojan&insert=false
   #   interval: 3600
   #   health-check:
   #     enable: true
@@ -35,6 +36,7 @@ proxy-providers:
   #     interval: 300
   # mojie-p:
   #   type: file
+  #   url: https://www.mojie.me/api/v1/client/subscribe?token=63f11e529726797302dee18ee36f41c8
   #   path: ./node/mojie.yaml
   #   interval: 3600
   #   health-check:
@@ -43,6 +45,7 @@ proxy-providers:
   #     interval: 300
   AmyTelecom-p:
     type: file
+    url: https://api.nxtlnodes.com/Subscription/Clash?sid=12841&token=WBU9WT7JGrV
     path: ./node/AmyTelecom.yaml
     interval: 3600
     health-check:
@@ -51,6 +54,7 @@ proxy-providers:
       interval: 300
   Nexitally-p:
     type: file
+    url: https://subconverter.qincis.com/sub?target=clash&url=https%3A%2F%2Fhiguigui.oss-cn-hongkong.aliyuncs.com%2Fother%2Fquanasjkldfj8908.txt&insert=false&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true
     path: ./node/Nexitally.yaml
     interval: 3600
     health-check:
