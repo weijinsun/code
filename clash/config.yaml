@@ -33,41 +33,21 @@ dns:
 
 proxy-providers:
   # npss-trojan-p:
-  #   type: http
+  #   type: file
   #   path: ./node/npss-trojan.yaml
   #   url: https://sub.6201170.xyz/sub?target=clash&url=https%3A%2F%2Fsubscribe.nerwo.co%2Fsub%2FOEkZR8JljhRsH9fR.html%3Ftype%3Dtrojan&insert=false
-  #   interval: 3600
-  #   health-check:
-  #     enable: true
-  #     url: http://www.gstatic.com/generate_204
-  #     interval: 300
   # mojie-p:
-  #   type: http
+  #   type: file
   #   url: https://www.mojie.me/api/v1/client/subscribe?token=63f11e529726797302dee18ee36f41c8
   #   path: ./node/mojie.yaml
-  #   interval: 3600
-  #   health-check:
-  #     enable: true
-  #     url: http://www.gstatic.com/generate_204
-  #     interval: 300
   AmyTelecom-p:
-    type: http
-    url: https://api.nxtlnodes.com/Subscription/Clash?sid=12841&token=WBU9WT7JGrV
+    type: file
+    #url: https://api.nxtlnodes.com/Subscription/Clash?sid=12841&token=WBU9WT7JGrV
     path: ./node/AmyTelecom.yaml
-    interval: 3600
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
   Nexitally-p:
-    type: http
-    url: https://subconverter.qincis.com/sub?target=clash&url=https%3A%2F%2Fhiguigui.oss-cn-hongkong.aliyuncs.com%2Fother%2Fquanasjkldfj8908.txt&insert=false&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true
+    type: file
+    #url: https://subconverter.qincis.com/sub?target=clash&url=https%3A%2F%2Fhiguigui.oss-cn-hongkong.aliyuncs.com%2Fother%2Fquanasjkldfj8908.txt&insert=false&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true
     path: ./node/Nexitally.yaml
-    interval: 3600
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
 
 # 策略组
 # 按照下方格式写入策略组，其中 DIRECT 和 DIRECT 为回国策略(可以仅代理媒体），请将大陆节点填入
