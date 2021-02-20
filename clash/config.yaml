@@ -26,7 +26,7 @@ dns:
 
 proxy-providers:
   # npss-trojan-p:
-  #   type: file
+  #   type: http
   #   path: ./node/npss-trojan.yaml
   #   url: https://sub.6201170.xyz/sub?target=clash&url=https%3A%2F%2Fsubscribe.nerwo.co%2Fsub%2FOEkZR8JljhRsH9fR.html%3Ftype%3Dtrojan&insert=false
   #   interval: 3600
@@ -35,7 +35,7 @@ proxy-providers:
   #     url: http://www.gstatic.com/generate_204
   #     interval: 300
   # mojie-p:
-  #   type: file
+  #   type: http
   #   url: https://www.mojie.me/api/v1/client/subscribe?token=63f11e529726797302dee18ee36f41c8
   #   path: ./node/mojie.yaml
   #   interval: 3600
