@@ -44,10 +44,18 @@ proxy-providers:
     type: file
     #url: https://api.nxtlnodes.com/Subscription/Clash?sid=12841&token=WBU9WT7JGrV
     path: ./node/AmyTelecom.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
   Nexitally-p:
     type: file
     #url: https://subconverter.qincis.com/sub?target=clash&url=https%3A%2F%2Fhiguigui.oss-cn-hongkong.aliyuncs.com%2Fother%2Fquanasjkldfj8908.txt&insert=false&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true
     path: ./node/Nexitally.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 
 # 策略组
 # 按照下方格式写入策略组，其中 DIRECT 和 DIRECT 为回国策略(可以仅代理媒体），请将大陆节点填入
@@ -61,14 +69,6 @@ proxy-providers:
   #  interval: 300
   #  lazy: true
 proxy-groups:
-  # - name: "npss-trojan"
-  #   type: select
-  #   use:
-  #     - npss-trojan-p
-  # - name: "mojie"
-  #   type: select
-  #   use:
-  #     - mojie-p
   - name: "AmyTelecom"
     type: select
     use:
