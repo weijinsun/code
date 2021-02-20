@@ -44,7 +44,7 @@ proxy-providers:
   #     url: http://www.gstatic.com/generate_204
   #     interval: 300
   AmyTelecom-p:
-    type: url
+    type: http
     url: https://api.nxtlnodes.com/Subscription/Clash?sid=12841&token=WBU9WT7JGrV
     path: ./node/AmyTelecom.yaml
     interval: 3600
@@ -53,7 +53,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
       interval: 300
   Nexitally-p:
-    type: url
+    type: http
     url: https://subconverter.qincis.com/sub?target=clash&url=https%3A%2F%2Fhiguigui.oss-cn-hongkong.aliyuncs.com%2Fother%2Fquanasjkldfj8908.txt&insert=false&emoji=true&list=false&udp=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true
     path: ./node/Nexitally.yaml
     interval: 3600
