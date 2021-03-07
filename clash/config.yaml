@@ -117,6 +117,7 @@ rules:
   - DOMAIN-SUFFIX,githubusercontent.com,Proxy
   - DOMAIN-SUFFIX,git.huiyoujia.com,Proxy
   - DOMAIN-SUFFIX,vipgame.io,Proxy
+  - DOMAIN-SUFFIX,ruanyifeng.com,Proxy
 
   - IP-CIDR,192.168.0.0/16,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT
